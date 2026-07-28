@@ -1,0 +1,216 @@
+/* ══════════════════════════════════════════════
+   FOQUINHO CARENTE — Micro-interactions
+   Premium • Subtle • Purposeful
+   ══════════════════════════════════════════════ */
+
+/* ── AOS Overrides ── */
+[data-aos] {
+  pointer-events: none;
+}
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
+
+[data-aos="fade-up"] {
+  transform: translate3d(0, 32px, 0);
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="fade-up"].aos-animate {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+[data-aos="fade-down"] {
+  transform: translate3d(0, -24px, 0);
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="fade-down"].aos-animate {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+[data-aos="fade-left"] {
+  transform: translate3d(-32px, 0, 0);
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="fade-left"].aos-animate {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+[data-aos="fade-right"] {
+  transform: translate3d(32px, 0, 0);
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="fade-right"].aos-animate {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+[data-aos="zoom-in"] {
+  transform: scale(0.95);
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="zoom-in"].aos-animate {
+  transform: scale(1);
+  opacity: 1;
+}
+
+[data-aos="scale-up"] {
+  transform: scale(0.9);
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos="scale-up"].aos-animate {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* ── Image Hover Zoom ── */
+.img-hover-zoom {
+  overflow: hidden;
+}
+
+.img-hover-zoom img {
+  transition: transform 0.7s var(--ease-out-quint);
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.06);
+}
+
+/* ── Card Hover Lift ── */
+.hover-lift {
+  transition: transform var(--duration-normal) var(--ease-out-quint),
+              box-shadow var(--duration-normal) var(--ease-out-quint);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── Link Hover ── */
+.link-hover {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all var(--duration-fast) var(--ease-out-quint);
+}
+
+.link-hover i {
+  transition: transform var(--duration-fast) var(--ease-out-quint);
+}
+
+.link-hover:hover i {
+  transform: translateX(4px);
+}
+
+/* ── Fade In (keyframe) ── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s var(--ease-out-quint) forwards;
+}
+
+/* ── Counter Pulse ── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.pulse {
+  animation: pulse 2s var(--ease-in-out) infinite;
+}
+
+/* ── Badge Pop ── */
+@keyframes badgePop {
+  0% { transform: scale(0); }
+  60% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.badge-pop {
+  animation: badgePop 0.4s var(--ease-out-quint) forwards;
+}
+
+/* ── Shimmer ── */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, var(--gray-100) 25%, var(--gray-50) 50%, var(--gray-100) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* ── Scale In ── */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s var(--ease-out-quint) forwards;
+}
+
+/* ── Slide Up ── */
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s var(--ease-out-quint) forwards;
+}
+
+/* ── Float (gentle hover) ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 3s var(--ease-in-out) infinite;
+}
+
+/* ── Delay Classes ── */
+.delay-1 { transition-delay: 80ms !important; animation-delay: 80ms !important; }
+.delay-2 { transition-delay: 160ms !important; animation-delay: 160ms !important; }
+.delay-3 { transition-delay: 240ms !important; animation-delay: 240ms !important; }
+.delay-4 { transition-delay: 320ms !important; animation-delay: 320ms !important; }
+.delay-5 { transition-delay: 400ms !important; animation-delay: 400ms !important; }
